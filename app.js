@@ -45,3 +45,13 @@ const showMovies = (data) => {
         }
     )
 }
+document.querySelector("#search").addEventListener(
+    "keyup",
+    function (event) {
+        if (event.target.value != "") {
+            getMovies(SEARCHAPI + event.target.value)
+        } else {
+            getMovies(APIURL);
+        }
+    }
+)
